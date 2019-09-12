@@ -1,0 +1,79 @@
+{
+  "name": "thesis",
+  "description": "Thesis",
+  "version": "0.0.6",
+  "repository": {
+    "type": "git"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.2",
+    "babel-eslint": "^10.0.2",
+    "del": "^5.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0",
+    "eslint-plugin-html": "^6.0.0",
+    "fs-extra": "^8.1.0",
+    "gh-pages": "^2.0.1",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-copy": "^4.0.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-inline-source": "^4.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-terser": "^1.2.0",
+    "semver": "^6.2.0",
+    "workbox-build": "^4.3.1",
+    "rootify": "^1.1.0",
+    "watchify": "^3.11.1"
+  },
+  "scripts": {
+    "build-gulp": "gulp build",
+    "build-prod": "gulp buildProd",
+    "clean": "gulp clean",
+    "deploy": "gulp deployProd",
+    "lint": "gulp lint",
+    "serve": "gulp serve",
+    "serve-prod": "gulp serveProd",
+    "start": "gulp serve",
+    "mon": "nodemon  ./server/index.js localhost 8080",
+    "build": "bankai build bankai.js",
+    "dev": "bankai start bankai.config.js",
+    "watch": "watchify index.js -o bundle.js"
+  },
+  "browserify": {
+    "transform": [
+      "rootify"
+    ]
+  },
+  "rootify": {
+    "rootPath": "./choo",
+    "component": "./choo/components"
+  },
+  "documentify": {
+    "transform": [
+      [
+        "./lib/document.js",
+        {
+          "order": "end"
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "bankai": "^9.15.2",
+    "choo": "^7.0.0",
+    "dedent": "^0.7.0",
+    "documentify": "^3.2.2",
+    "file-server": "^2.1.0",
+    "hstream": "^1.2.0",
+    "nodemon": "^1.19.1",
+    "sheetify": "^8.0.0",
+    "tachyons": "^4.11.1"
+  }
+}

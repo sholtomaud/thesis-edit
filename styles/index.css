@@ -1,0 +1,379 @@
+/* Typography imported from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro:200,400');
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
+
+/* Generic styles */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* img {
+    max-width: 100%;
+}
+
+@page {
+    margin: .5cm;
+} */
+
+body {
+    color: #000;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    font-size: 12pt;
+    font-weight: normal;
+    top: 0;
+    left: 0;
+    padding: 0;
+    background: #f6f6f6;
+    /* background: #e2e1e0; */
+    /* background: rgb(204, 204, 204); */
+    /* margin: 0 auto; */
+    margin-bottom: 0.5cm;
+
+    /* align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    /* Grid styles */
+    display: grid;
+    /* align-items: center; */
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+    /* grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr)); */
+    grid-template-rows: repeat(auto-fill, minmax(29.7cm, 29.7cm));
+    /* grid-template-rows: minmax(29.7cm, 29.7cm); */
+    grid-template-columns: [sidebar-start start] 1fr [chapter-start] 21cm [sidebar-right start] 1fr;
+    grid-gap: 0.5em;
+}
+
+input {
+    height: 50px;
+    padding: 10px;
+    font-family: 'Old Standard TT', serif;
+}
+
+.chapter {
+    grid-column: chapter-start;
+    align-self: start;
+    font-family: 'Old Standard TT', serif;
+    background: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    /* display: block; */
+    margin: 0;
+    /* Grid styles */
+    display: grid;
+    /* align-items: center; */
+    /* width: 21cm; */
+    max-height: 29.7cm;
+    min-height: 29.7cm;
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+    grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+    /* grid-gap: 0.5em; */
+    grid-gap: 0em;
+}
+
+page {
+    background: white;
+    /* display: block; */
+    margin: 2.5cm 2.5cm 2.5cm 3.5cm;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+
+    /* Grid styles */
+    display: grid;
+    align-content: start;	
+    /* align-items: center; */
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+    /* grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr)); */
+    grid-auto-rows: min-content;
+    grid-gap: 0em;
+}
+
+
+
+
+
+/* 
+page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+}
+
+page[size="A4"][layout="landscape"] {
+    width: 29.7cm;
+    height: 21cm;
+}
+
+page[size="A3"] {
+    width: 29.7cm;
+    height: 42cm;
+}
+
+page[size="A3"][layout="landscape"] {
+    width: 42cm;
+    height: 29.7cm;
+}
+
+page[size="A5"] {
+    width: 14.8cm;
+    height: 21cm;
+}
+
+page[size="A5"][layout="landscape"] {
+    width: 21cm;
+    height: 14.8cm;
+} */
+
+/* 
+@media print {
+
+    body,
+    page {
+        margin: 0;
+        box-shadow: 0;
+    }
+} */
+
+
+/* html,
+body {
+    margin: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(238, 238, 238);
+    font-family: 'Old Standard TT', serif;
+} */
+
+
+main {
+    /* width: 100vw; */
+    /* height: 600px; */
+    padding: 25px;
+    background-color: white;
+    /* align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Grid styles */
+    display: grid;
+    align-items: center;
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+    grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+    grid-gap: 0.5em;
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    page-break-after: avoid;
+}
+
+h1 {
+    margin: 0 0 1em 0;
+    font-size: 130%;
+}
+
+table,
+figure {
+    page-break-inside: avoid;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px 0 3px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+h3 {
+    color: hotpink;
+}
+
+p,
+a {
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    margin: 0 0 0 0;
+    font-size: 100%;
+}
+
+a::after,
+a:visited::after {
+    content: ' ('attr(href) ')';
+    font-style: italic;
+    word-wrap: break-word;
+}
+
+/* 
+@page {
+    @top-center { content: element(header) }
+}
+@page { 
+    @bottom-center { content: element(footer) }
+} */
+
+@page {
+    size: A4;
+}
+
+@page :left {
+    margin-left: 3cm;
+}
+
+@page :right {
+    margin-left: 4cm;
+}
+
+
+@page :first {}
+
+
+@page :blank {
+    @top-center {
+        content: "This page is intentionally left blank."
+    }
+}
+
+@page: right {
+    @bottom-left {
+        margin: 10pt 0 30pt 0;
+        border-top: .25pt solid #666;
+        content: "My book";
+        font-size: 9pt;
+        color: #333;
+    }
+
+    @bottom-right {
+        content: counter(page);
+    }
+}
+
+@page: left {
+    @bottom-left {
+        content: counter(page);
+    }
+}
+
+
+footer {
+    border-top: 1px solid #ccc;
+    position: running(footer);
+    min-height: 20px;
+    padding: 20px 0 0 78px;
+    font-size: 65%;
+}
+
+/* 
+footer::after {
+    content: url(assets/barcode.png);
+    position: absolute;
+    top: 20px;
+    left: 0px;
+}
+
+footer a {
+    display: block;
+    margin-top: 15px;
+}
+
+footer a::after {
+    display: block;
+}
+
+footer div.content {
+    padding-left: 20px;
+}
+
+footer div.content::after {
+    content: 'This page was printed from https://sholtomaud.com/Descartes_QM';
+    display: block;
+    margin-top: 30px;
+    font-style: italic;
+    font-size: .9em;
+} */
+
+[contenteditable="true"] {
+    outline: none;
+    padding: 0.5em;
+}
+
+[contenteditable]:hover,
+[contenteditable]:focus {
+    /* padding: .25em; */
+    /* outline: dashed lightgray 1px; */
+}
+
+
+/* box-decoration-break: clone;
+-webkit-box-decoration-break: clone;
+box-shadow: 8px 8px 10px 0 #ff1492,
+-5px -5px 5px 0 #00f,
+5px 5px 15px 0 #ff0; */
+
+/* 
+[contenteditable]:hover {
+  /* background: #fafafa;
+  outline: 2px solid #eee; */
+/* } */
+
+/* [contenteditable]:focus { */
+/* background: #efefef; */
+/* outline: 2px solid blue; */
+/* outline: dashed lightgray 1px; */
+/* } */
+
+.paragraph {
+    padding: 0em;
+    page-break-before: avoid;
+    page-break-inside: avoid;
+    border-left: white 5px solid;
+    border: dashed lightgray 1px;
+}
+
+.paragraph:hover{
+    /* border-left: aliceblue 5px solid; */
+}
+
+.paragraph:hover,
+.paragraph:focus {
+    /* border-left: aliceblue 3px solid; */
+    /* border: dashed lightgray 1px; */
+
+}
+
+.code{
+    background: aliceblue;
+}
+
+
+
+.hero {
+    /* Photo by mnm.all on Unsplash */
+    background: url('https://images.unsplash.com/photo-1518176258769-f227c798150e') center;
+    background-size: cover;
+    padding: 4rem 2rem;
+
+}
+
+.figure {
+    box-shadow: rgb(238, 238, 238);
+    background: white;
+}
